@@ -1,1 +1,1 @@
-# This is a repository for Regular expression Project.
+# This is a directory for Regular expression Project.
