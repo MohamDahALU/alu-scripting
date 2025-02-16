@@ -1,3 +1,5 @@
-# This is a repository for the ALU BSE Frontend Web Development Course - Scripting.
+# This is a Scripting repository for the ALU BSE Courses:
+## Frontend Web Development.
+## Web Infrastructure
 
-## Student: Mohamed Dahab
+### Student: Mohamed Dahab
