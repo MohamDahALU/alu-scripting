@@ -1,8 +1,4 @@
 #!/usr/bin/python3
-"""
-This module contains a function to get the number
-of subscribers for a given subreddit.
-"""
 import requests
 
 
@@ -17,7 +13,6 @@ def number_of_subscribers(subreddit):
     response = requests.get(url, headers=headers, allow_redirects=False)
     if response.status_code == 200:
         data = response.json()
-        print(data)
         return data["data"]["subscribers"]
     else:
         return 0
