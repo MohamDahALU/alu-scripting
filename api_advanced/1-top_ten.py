@@ -15,21 +15,20 @@ def top_ten(subreddit):
     url = "https://www.reddit.com/r/{}/hot.json?limit=10".format(subreddit)
     headers = {"User-Agent": "Mozilla/5.0 \
 (compatible; MSIE 10.0; Windows NT 6.1; Trident/6.0)"}
-    response = requests.get(url, headers=headers, allow_redirects=False)
+    response = requests.get(
+        url,
+        headers=headers,
+        params={"after": None},
+        allow_redirects=False
+    )
     if response.status_code != 200:
         print(None)
         return
 
-    try:
-        json = response.json()
-        data = json["data"]["children"]
-        if not data:
-            print(None)
-            return
-        for post in data:
-            print(post.get("data", {}).get("title"))
-    except (KeyError, ValueError):
-        print(None)
+    json = response.json()
+    data = json["data"]["children"]
+    for post in data:
+        print(post.get("data", {}).get("title"))
 
 
 # top_ten("sudan")
