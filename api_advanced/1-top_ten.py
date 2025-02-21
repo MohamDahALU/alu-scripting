@@ -21,7 +21,7 @@ def top_ten(subreddit):
         params={"after": None},
         allow_redirects=False
     )
-    print(response)
+    print(subreddit)
     if response.status_code != 200:
         print(None)
         return
