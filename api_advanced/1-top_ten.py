@@ -12,7 +12,7 @@ def top_ten(subreddit):
     of the top ten hot posts from a subreddit.
     """
 
-    url = "https://www.reddit.com/r/{}/hot.json?limit=10".format(subreddit)
+    url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
     headers = {"User-Agent": "Mozilla/5.0"}
     response = requests.get(url, headers=headers, allow_redirects=False)
 
@@ -20,7 +20,7 @@ def top_ten(subreddit):
         json = response.json()
         data = json["data"]["children"]
 
-        for post in data:
+        for post in data[:10]:
             print(post.get("data", {}).get("title"))
         return "OK"
     else:
