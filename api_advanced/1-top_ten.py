@@ -22,9 +22,9 @@ def top_ten(subreddit):
 
         for post in data[:10]:
             print(post.get("data", {}).get("title"))
-        return "OK"
+
     else:
-        print("None")
+        print(None)
 
 
 # top_ten("sudan")
