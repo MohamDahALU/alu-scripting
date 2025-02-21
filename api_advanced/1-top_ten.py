@@ -12,7 +12,7 @@ def top_ten(subreddit):
     of the top ten hot posts from a subreddit.
     """
 
-    url = f"https://www.reddit.com/r/{subreddit}/hot.json?limit=10"
+    url = "https://www.reddit.com/r/{}/hot.json?limit=10".format(subreddit)
     headers = {"User-Agent": "Mozilla/5.0"}
     response = requests.get(url, headers=headers, allow_redirects=False)
 
