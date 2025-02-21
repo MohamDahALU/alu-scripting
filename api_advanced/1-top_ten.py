@@ -12,8 +12,9 @@ def top_ten(subreddit):
     of the top ten hot posts from a subreddit.
     """
 
-    url = "https://old.reddit.com/r/{}/hot.json?limit=10".format(subreddit)
-    headers = {"User-Agent": "Mozilla/5.0"}
+    url = "https://www.reddit.com/r/{}/hot.json?limit=10".format(subreddit)
+    headers = {"User-Agent": "Mozilla/5.0 \
+(compatible; MSIE 10.0; Windows NT 6.1; Trident/6.0)"}
     response = requests.get(url, headers=headers, allow_redirects=False)
     if response.status_code != 200:
         print(None)
