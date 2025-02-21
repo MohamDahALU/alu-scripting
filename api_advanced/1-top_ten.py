@@ -20,10 +20,16 @@ def top_ten(subreddit):
         print(None)
         return
 
-    json = response.json()
-    data = json["data"]["children"]
-    for post in data:
-        print(post.get("data", {}).get("title"))
+    try:
+        json = response.json()
+        data = json["data"]["children"]
+        if not data:
+            print(None)
+            return
+        for post in data:
+            print(post.get("data", {}).get("title"))
+    except (KeyError, ValueError):
+        print(None)
 
 
-top_ten("sudan")
+# top_ten("sudan")
