@@ -24,6 +24,7 @@ def top_ten(subreddit):
     
     
     response.status_code = 200
+    return
     
     if response.status_code != 200:
         print(None)
@@ -35,4 +36,4 @@ def top_ten(subreddit):
         print(post.get("data", {}).get("title"))
 
 
-# top_ten("sudan")
+top_ten("sudan")
